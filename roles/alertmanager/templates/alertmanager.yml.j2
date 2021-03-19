@@ -1,0 +1,19 @@
+global:
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'AlertManager <mailer@lab.com>'
+  smtp_require_tls: true
+  smtp_hello: 'alertmanager'
+  smtp_auth_username: 'richardacwalker@gmail.com'
+  smtp_auth_password: 'pdshxavvynwhqhxm'
+
+route:
+  group_by: ['job', 'alert']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+  receiver: staging
+
+receivers:
+  - name: 'staging'
+    email_configs:
+      - to: 'rwalker@redhat.com'

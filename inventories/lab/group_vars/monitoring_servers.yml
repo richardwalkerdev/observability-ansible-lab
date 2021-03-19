@@ -1,0 +1,19 @@
+---
+message: 'Hello World from group_vars!'
+
+alertmanager_cluster_peers: 
+  - '192.168.0.71'
+  - '192.168.0.72'
+
+thanos_store_stores:
+  - 192.168.0.71:10905
+  - 192.168.0.72:10905
+
+thanos_store_sidecars:
+  - 192.168.0.71:10901
+  - 192.168.0.72:10901
+
+grafana_db_host     : '192.168.0.70:5432'
+grafana_db_name     : 'grafana_db'
+grafana_db_user     : 'grafana'
+grafana_db_password : 'changeme'
